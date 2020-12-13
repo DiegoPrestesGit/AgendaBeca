@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibAgendaBeca;
+using System;
 
 namespace AgendaBeca
 {
@@ -10,6 +7,16 @@ namespace AgendaBeca
     {
         static void Main(string[] args)
         {
+            Execute();
+            Console.Read();
+        }
+
+        public static void Execute()
+        {
+            AgendaView agendaView = new AgendaView();
+            agendaView.ConsoleConfig();
+            agendaView.MenuPrincipal();
+            Console.Read();
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace LibAgendaBeca
 {
@@ -17,7 +15,7 @@ namespace LibAgendaBeca
         public void MenuPrincipal()
         {
             Agenda agenda = new Agenda();
-
+            agenda.HandleDiretorio();
             Boolean flag = true;
             while (flag)
             {
@@ -28,9 +26,9 @@ namespace LibAgendaBeca
                 Console.WriteLine("VER TODOS OS USUÁRIOS DA AGENDA [3]");
                 Console.WriteLine("REMOVER USUÁRIO POR NOME        [4]");
                 Console.WriteLine("SAIR DA AGENDA                  [0]");
-                int operacao = int.Parse(Console.ReadLine());
+                int select = int.Parse(Console.ReadLine());
 
-                switch (operacao)
+                switch (select)
                 {
                     case 1:
                         agenda.Adicionar();
@@ -55,6 +53,7 @@ namespace LibAgendaBeca
 
                     default:
                         Console.WriteLine("Opção inválida");
+                        Console.ReadLine();
                         break;
                 }
             }
